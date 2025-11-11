@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2025-08-12",
+    "kb": "KB5066102",
+    "product": "Windows Server 2022",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2025 cumulative security update.",
+    "known_issues": "See release notes.",
+    "link": "https://support.microsoft.com/help/5066102",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-08-12",
+    "kb": "KB5066101",
+    "product": "Windows Server 2019",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2025 cumulative security update.",
+    "known_issues": "See release notes.",
+    "link": "https://support.microsoft.com/help/5066101",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-08-12",
+    "kb": "KB5066100",
+    "product": "Windows Server 2016",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2025 cumulative security update.",
+    "known_issues": "See release notes.",
+    "link": "https://support.microsoft.com/help/5066100",
+    "severity": "Security"
+  }
+]
