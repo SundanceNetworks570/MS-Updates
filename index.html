@@ -37,6 +37,16 @@
     .muted { color: var(--muted); }
     footer { color: var(--muted); font-size: 12px; padding: 12px 2px 0; }
     .meta { color: var(--muted); font-size: 12px; margin-left: 8px; }
+    .errorbar {
+      display:none;
+      margin-top:8px;
+      padding:8px 10px;
+      border-radius:10px;
+      background: rgba(255,80,80,.12);
+      border:1px solid rgba(255,80,80,.3);
+      color:#ffb3b3;
+      font-size:13px;
+    }
     @media print {
         body { background: #fff; color:#000; }
         header, .toolbar, .filterpanel, footer { display:none; }
@@ -50,6 +60,8 @@
 <header>
   <h1>Windows Updates & Patches — Last 90 Days</h1>
   <div class="sub" id="coverage">Coverage window: (calculating…)</div>
+  <div id="errorbar" class="errorbar"></div>
+
   <div class="toolbar">
     <div class="searchbox">
       <input type="text" id="searchInput" placeholder="Search KB, OS version, details, or issues...">
@@ -64,6 +76,7 @@
     <button class="btn" id="btnEmail" title="Open email with summary">Email</button>
   </div>
 </header>
+
 <div class="wrap">
   <div class="card">
     <table id="updatesTable">
@@ -81,10 +94,24 @@
       <tbody></tbody>
     </table>
   </div>
-  <footer><span id="generatedAt"></span> • Tip: Search narrows results live and works together with OS filters. Email uses whatever is currently visible.</footer>
+  <footer>
+    <span id="generatedAt"></span> • Tip: Search narrows results live and works together with OS filters. Email uses whatever is currently visible.
+  </footer>
 </div>
 
-<!-- IMPORTANT: cache-bust script.js so live page never uses an old cached copy -->
-<script src="script.js?v=20251209"></script>
+<!-- IMPORTANT: cache-busted + deferred so it always runs AFTER DOM exists -->
+<script defer src="script.js?v=20251209"></script>
+
+<!-- If script.js fails to load, show a visible error -->
+<script>
+  window.addEventListener("error", function(e){
+    if (String(e?.filename||"").includes("script.js")) {
+      const bar = document.getElementById("errorbar");
+      bar.style.display = "block";
+      bar.textContent = "script.js failed to load or crashed. Open DevTools Console for details.";
+    }
+  });
+</script>
+
 </body>
 </html>
