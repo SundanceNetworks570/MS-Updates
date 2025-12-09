@@ -8,7 +8,6 @@ API_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0"
 UPDATES_URL = f"{API_BASE}/updates"
 
 def normalize_product(raw: str) -> str:
-    """Group MSRC product names into your dashboard buckets."""
     r = (raw or "").lower()
 
     if "windows 11" in r:
@@ -51,16 +50,17 @@ def badge(severity: str, title: str) -> str:
     return "Update"
 
 def fetch_json(url: str) -> dict:
-    # MSRC recommends standard JSON accept header. :contentReference[oaicite:1]{index=1}
-    req = Request(url, headers={"Accept": "application/json", "User-Agent": "github-action-msrc-fetch"})
+    req = Request(
+        url,
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "github-action-msrc-fetch"
+        },
+    )
     with urlopen(req) as r:
         return json.load(r)
 
 def fetch_all_updates():
-    """
-    Follow OData pagination (@odata.nextLink) and return the full list.
-    The /updates endpoint is paged. :contentReference[oaicite:2]{index=2}
-    """
     items = []
     url = UPDATES_URL + "?" + "&".join([
         "$orderby=" + quote("CurrentReleaseDate desc"),
@@ -72,17 +72,15 @@ def fetch_all_updates():
         page_items = data.get("value", [])
         if isinstance(page_items, list):
             items.extend(page_items)
-        url = data.get("@odata.nextLink")  # None when finished
+        url = data.get("@odata.nextLink")
 
     return items
 
 def main():
-    # Rolling 90 days from now (UTC)
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=90)
 
     items = fetch_all_updates()
-
     out = []
 
     for item in items:
