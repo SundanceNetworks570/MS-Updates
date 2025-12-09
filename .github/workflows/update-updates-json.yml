@@ -2,8 +2,9 @@ name: Update updates.json
 
 on:
   schedule:
-    - cron: "15 11 * * *"  # daily at 11:15 UTC (6:15am ET)
-  workflow_dispatch: {}    # allow manual Run Workflow button
+    # Every 6 hours (UTC): catches same-day Patch Tuesday drops
+    - cron: "15 */6 * * *"
+  workflow_dispatch: {}    # allow manual Run Workflow button anytime
 
 permissions:
   contents: write
