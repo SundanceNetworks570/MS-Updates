@@ -1,0 +1,4 @@
+[
+  { "date": "2025-10-28", "kb": "KB5067036", "product": "Windows 11 24H2 / 25H2", "classification": "Preview (Non-security)", "details": "...", "known_issues": "...", "link": "...", "severity": "Preview" }
+  // ...keep the rest of your old rows here...
+]
