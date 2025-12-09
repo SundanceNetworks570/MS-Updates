@@ -1,5 +1,5 @@
 (function(){
-  // ---------- 1) Fallback hard-coded updates (kept so you "don't lose anything") ----------
+  // ---------- 1) Fallback hard-coded updates (kept so you don't lose anything) ----------
   // If updates.json fails to load, the page will still work using this list.
   const fallbackUpdates = [{"date": "2025-10-28", "kb": "KB5067036", "product": "Windows 11 24H2 / 25H2", "classification": "Preview (Non-security)", "details": "Cumulative non-security preview update; additional fixes including media DRM/EVR improvements and IIS/HTTP.sys related reliability updates.", "known_issues": "Addresses prior issues with protected content playback and IIS/HTTP.sys connectivity noted after September preview and October security updates.", "link": "https://support.microsoft.com/en-us/help/5067036", "severity": "Preview"}, {"date": "2025-10-20", "kb": "KB5070773", "product": "Windows 11 24H2 / 25H2", "classification": "Out-of-band", "details": "Fixes USB devices not working in Windows Recovery Environment after the Oct 14 security update; updates AI component versions; includes cumulative fixes from 10/14.", "known_issues": "Some Blu-ray/DVD/DTV apps may fail to play protected content (EVR/HDCP/DRM); IIS websites might fail to load in some environments (addressed by later preview).", "link": "https://support.microsoft.com/en-us/help/5070773", "severity": "Important (quality)"}, {"date": "2025-10-14", "kb": "KB5066835", "product": "Windows 11 24H2 / 25H2", "classification": "Security Update (Patch Tuesday)", "details": "October 2025 cumulative security update; includes security fixes and quality improvements. Disables File Explorer preview for files from the internet to mitigate a vulnerability.", "known_issues": "See Release notes: includes items like NDI streaming performance prior to Sept fix; other product-specific items may apply. Use MSRC for CVE details.", "link": "https://support.microsoft.com/en-us/help/5066835", "severity": "Security"}, {"date": "2025-10-14", "kb": "KB5066793", "product": "Windows 11 22H2 / 23H2", "classification": "Security Update (Patch Tuesday)", "details": "October 2025 cumulative security update; contains security fixes and quality improvements.", "known_issues": "Microsoft is not currently aware of any issues for this release.", "link": "https://support.microsoft.com/en-us/help/5066793", "severity": "Security"}, {"date": "2025-10-14", "kb": "KB5066791", "product": "Windows 10 21H2 / 22H2 (incl. LTSC 2021)", "classification": "Security Update (Patch Tuesday)", "details": "October 2025 cumulative security update; includes SSU improvements and various fixes (IME, WinRM, certificate chain for Azure validation, etc.).", "known_issues": "Incorrect 'End of support' message may appear on some editions enrolled in ESU or LTSC 2021; mitigations and Group Policy available.", "link": "https://support.microsoft.com/en-us/help/5066791", "severity": "Security"}, {"date": "2025-09-29", "kb": "KB5065789", "product": "Windows 11 25H2 / 24H2", "classification": "Preview (Non-security)", "details": "Non-security preview addressing protected content playback issues and other quality improvements.", "known_issues": "Addresses issues introduced by prior preview/security releases with EVR/DRM playback and HTTP.sys/IIS connectivity.", "link": "https://support.microsoft.com/en-us/help/5065789", "severity": "Preview"}, {"date": "2025-09-23", "kb": "KB5065790", "product": "Windows 11 23H2", "classification": "Preview (Non-security)", "details": "Non-security preview for Windows 11 23H2; quality fixes including SMBv1 connectivity resolution following Sept security update.", "known_issues": "Addresses SMBv1 protocol connectivity problems observed after September's security update.", "link": "https://support.microsoft.com/en-us/help/5065790", "severity": "Preview"}, {"date": "2025-09-22", "kb": "KB5068221", "product": "Windows 11 24H2", "classification": "Out-of-band", "details": "OOB cumulative update with App-V compatibility fix; includes Sept 9 security content; SSU KB5064531 included.", "known_issues": "SMBv1 connectivity problems after Sept 9 security update; later addressed by KB5065789.", "link": "https://support.microsoft.com/en-us/help/5068221", "severity": "Important (quality)"}, {"date": "2025-09-09", "kb": "KB5065426", "product": "Windows 11 24H2", "classification": "Security Update (Patch Tuesday)", "details": "September 2025 cumulative security update; includes security fixes and quality improvements for 24H2.", "known_issues": "See page for any active advisories; general guidance on Secure Boot cert updates.", "link": "https://support.microsoft.com/en-us/help/5065426", "severity": "Security"}, {"date": "2025-09-09", "kb": "KB5065431", "product": "Windows 11 22H2 / 23H2", "classification": "Security Update (Patch Tuesday)", "details": "September 2025 cumulative security update; includes SMB client/server auditing and MSI repair UAC behavior fixes.", "known_issues": "SMBv1 protocol connections over NetBT can fail after installing Sept 2025 update; addressed by KB5065790.", "link": "https://support.microsoft.com/en-us/help/5065431", "severity": "Security"}, {"date": "2025-09-09", "kb": "KB5065429", "product": "Windows 10 21H2 / 22H2 (incl. LTSC 2021)", "classification": "Security Update (Patch Tuesday)", "details": "September 2025 cumulative security update; includes internal OS security improvements.", "known_issues": "Reset & recovery operations may fail (resolved by later updates); NDI streaming and unexpected MSI repair UAC prompts resolved in Sept 9 update.", "link": "https://support.microsoft.com/en-us/help/5065429", "severity": "Security"}, {"date": "2025-08-29", "kb": "KB5064081", "product": "Windows 11 24H2", "classification": "Preview (Non-security)", "details": "Non-security preview for 24H2; quality improvements.", "known_issues": "Introduced issues playing protected content in some media apps (later addressed by Sept preview and Oct preview).", "link": "https://support.microsoft.com/en-us/help/5064081", "severity": "Preview"}, {"date": "2025-08-12", "kb": "KB5063878", "product": "Windows 11 24H2", "classification": "Security Update (Patch Tuesday)", "details": "August 2025 cumulative security update for Windows 11 24H2.", "known_issues": "See page; none widely documented at release.", "link": "https://support.microsoft.com/en-us/help/5063878", "severity": "Security"}, {"date": "2025-08-12", "kb": "KB5063875", "product": "Windows 11 22H2 / 23H2", "classification": "Security Update (Patch Tuesday)", "details": "August 2025 cumulative security update for Windows 11 22H2/23H2.", "known_issues": "See page; none widely documented at release.", "link": "https://support.microsoft.com/en-us/help/5063875", "severity": "Security"}, {"date": "2025-08-12", "kb": "KB5063709", "product": "Windows 10 21H2 / 22H2 (incl. LTSC 2021)", "classification": "Security Update (Patch Tuesday)", "details": "August 2025 cumulative security update; later changelog added notes about reset/recovery, NDI streaming, and MSI repair UAC prompt behavior.", "known_issues": "Reset & recovery may fail; NDI streaming performance issues; unexpected MSI repair UAC prompts (resolved by Sept updates).", "link": "https://support.microsoft.com/en-us/help/5063709", "severity": "Security"}];
 
@@ -7,30 +7,30 @@
   async function loadUpdates(){
     let updates = [];
 
-    // cache-buster so GH Pages doesn't serve old JSON
-    const bust = `?v=${Date.now()}`;
+    // BASE points to the deployed folder (root OR /docs) so pages works either way
+    const BASE = location.origin + location.pathname.replace(/\/[^\/]*$/, '/');
+    const bust = `v=${Date.now()}`; // cache-buster
 
     try {
-      const r = await fetch(`updates.json${bust}`, { cache: "no-store" });
-      if (!r.ok) throw new Error("updates.json fetch failed");
+      const r = await fetch(`${BASE}updates.json?${bust}`, { cache: "no-store" });
+      if (!r.ok) throw new Error(`updates.json fetch failed (${r.status})`);
       const list = await r.json();
       if (Array.isArray(list)) updates.push(...list);
     } catch (e) {
-      // fallback to hard-coded set so you never lose the page
       updates.push(...fallbackUpdates);
       console.warn("Using fallback updates (updates.json failed).", e);
     }
 
     // Optional: merge server-updates.json if present
     try {
-      const r2 = await fetch(`server-updates.json${bust}`, { cache: "no-store" });
+      const r2 = await fetch(`${BASE}server-updates.json?${bust}`, { cache: "no-store" });
       if (r2.ok) {
         const list2 = await r2.json();
         if (Array.isArray(list2)) updates.push(...list2);
       }
     } catch(_) {}
 
-    // Merge optional extra updates from localStorage (manual add-on)
+    // Manual add-ons via localStorage
     try {
       const __extra = JSON.parse(localStorage.getItem('extraUpdates') || '[]');
       if (Array.isArray(__extra) && __extra.length) updates.push(...__extra);
@@ -39,7 +39,7 @@
     return updates;
   }
 
-  // ---------- 3) Everything below is your existing UI logic ----------
+  // ---------- 3) Existing UI logic ----------
   const coverageEl = document.getElementById('coverage');
   const genEl = document.getElementById('generatedAt');
   const today = new Date();
@@ -226,6 +226,7 @@
   // ---------- 4) Boot ----------
   (async function init(){
     const updates = await loadUpdates();
+
     // store globally so resetSort can use it
     window.__updates = updates.slice().sort((a,b) => a.date < b.date ? 1 : -1);
 
