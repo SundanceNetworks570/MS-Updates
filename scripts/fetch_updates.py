@@ -9,7 +9,7 @@ CVRF_URL = f"{API_BASE}/cvrf"
 
 KB_RE = re.compile(r"\bKB\d{6,8}\b", re.IGNORECASE)
 
-def fetch_json(url: str) -> dict:
+def fetch_text(url: str) -> str:
     req = Request(
         url,
         headers={
@@ -18,14 +18,30 @@ def fetch_json(url: str) -> dict:
         },
     )
     with urlopen(req) as r:
-        return json.load(r)
+        return r.read().decode("utf-8", errors="replace")
+
+def fetch_json_or_xml(url: str):
+    """
+    Try to parse JSON. If that fails and it looks like XML, return a dict
+    carrying the raw XML for fallback extraction.
+    """
+    raw = fetch_text(url)
+    try:
+        return json.loads(raw)
+    except Exception as e:
+        # If it's XML, keep raw for regex KB extraction
+        if raw.lstrip().startswith("<"):
+            return {"__raw_xml": raw, "__json_error": str(e)}
+        # Otherwise raise a helpful error
+        snippet = raw[:250].replace("\n", " ")
+        raise RuntimeError(f"Non-JSON response and not XML. First 250 chars: {snippet}") from e
 
 def fetch_all_update_docs():
     """Follow @odata.nextLink to get all monthly CVRF doc headers."""
     items = []
     url = UPDATES_URL
     while url:
-        data = fetch_json(url)
+        data = fetch_json_or_xml(url)
         page_items = data.get("value", [])
         if isinstance(page_items, list):
             items.extend(page_items)
@@ -55,10 +71,7 @@ def normalize_product(raw: str) -> str:
     return raw or "Other"
 
 def flatten_product_tree(product_tree: dict) -> dict:
-    """
-    Build ProductID -> ProductName map from CVRF ProductTree.
-    FullProductName is the reliable ID map.
-    """
+    """Build ProductID -> ProductName map from CVRF ProductTree."""
     id_to_name = {}
     try:
         full_names = product_tree.get("FullProductName", []) or []
@@ -72,11 +85,9 @@ def flatten_product_tree(product_tree: dict) -> dict:
     return id_to_name
 
 def extract_remediation_rows(remediations, id_to_name, doc_date):
-    """
-    Extract KB rows from a list of remediation objects.
-    Handles ProductID/ProductIDs variants.
-    """
     rows = []
+    if isinstance(remediations, dict):
+        remediations = [remediations]
     if not isinstance(remediations, list):
         return rows
 
@@ -91,7 +102,6 @@ def extract_remediation_rows(remediations, id_to_name, doc_date):
 
         kb = kb_match.group(0).upper()
 
-        # Product IDs may be in ProductID or ProductIDs
         pids = []
         if isinstance(r.get("ProductID"), str):
             pids = [r.get("ProductID")]
@@ -123,27 +133,47 @@ def extract_remediation_rows(remediations, id_to_name, doc_date):
     return rows
 
 def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> list:
-    """
-    Download CVRF doc and extract KBs from:
-      1) Top-level Remediations
-      2) Vulnerability-level Remediations (most common)
-    """
     url = f"{CVRF_URL}/{doc_id}"
-    cvrf = fetch_json(url)
+    cvrf = fetch_json_or_xml(url)
 
+    # ---------- XML fallback ----------
+    if "__raw_xml" in cvrf:
+        xml_text = cvrf["__raw_xml"]
+        kb_list = sorted(set(KB_RE.findall(xml_text)))
+        rows = []
+        for kb in kb_list:
+            rows.append({
+                "date": doc_date.date().isoformat(),
+                "kb": kb.upper(),
+                "product": "Microsoft Products",
+                "classification": "Security Update (Patch Tuesday)",
+                "details": f"{doc_title} (extracted from XML fallback)",
+                "known_issues": "See Microsoft release notes / CVRF for details.",
+                "link": url,
+                "severity": "Security"
+            })
+        # If no KBs found even in XML, return doc-level row
+        if not rows:
+            rows.append({
+                "date": doc_date.date().isoformat(),
+                "kb": doc_id,
+                "product": "Microsoft Products",
+                "classification": "Update",
+                "details": f"{doc_title} (XML fallback, no KBs detected)",
+                "known_issues": "See Microsoft release notes / CVRF for details.",
+                "link": url,
+                "severity": "Update"
+            })
+        return rows
+
+    # ---------- JSON path ----------
     product_tree = cvrf.get("ProductTree", {}) or {}
     id_to_name = flatten_product_tree(product_tree)
 
     rows = []
 
     # 1) Top-level remediations
-    rows.extend(
-        extract_remediation_rows(
-            cvrf.get("Remediations", []) or [],
-            id_to_name,
-            doc_date
-        )
-    )
+    rows.extend(extract_remediation_rows(cvrf.get("Remediations", []) or [], id_to_name, doc_date))
 
     # 2) Per-vulnerability remediations
     vulns = (
@@ -151,6 +181,8 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
         or cvrf.get("Vulnerabilities", [])
         or []
     )
+    if isinstance(vulns, dict):
+        vulns = [vulns]
 
     if isinstance(vulns, list):
         for v in vulns:
@@ -161,14 +193,13 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
             )
             rows.extend(extract_remediation_rows(v_rems, id_to_name, doc_date))
 
-    # Fallback if no KBs found
     if not rows:
         rows.append({
             "date": doc_date.date().isoformat(),
             "kb": doc_id,
             "product": "Microsoft Products",
             "classification": "Update",
-            "details": doc_title or "Security updates",
+            "details": f"{doc_title} (JSON parsed, but no KBs found)",
             "known_issues": "See Microsoft release notes / CVRF for details.",
             "link": url,
             "severity": "Update"
@@ -203,12 +234,16 @@ def main():
         ))
 
     out = []
+
     for doc_id, title, dt in recent_docs:
         if not doc_id:
             continue
         try:
             out.extend(extract_rows_from_cvrf(doc_id, title, dt))
-        except Exception:
+        except Exception as e:
+            # IMPORTANT: log the real error so you can see it in Actions
+            print(f"[ERROR] Failed parsing CVRF {doc_id}: {e}")
+
             out.append({
                 "date": dt.date().isoformat(),
                 "kb": doc_id,
