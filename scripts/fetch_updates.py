@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
+from urllib.parse import quote
 
 API_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0"
 UPDATES_URL = f"{API_BASE}/updates"
@@ -10,7 +11,6 @@ def normalize_product(raw: str) -> str:
     """Group MSRC product names into your dashboard buckets."""
     r = (raw or "").lower()
 
-    # Windows 11 buckets
     if "windows 11" in r:
         if "24h2" in r or "25h2" in r:
             return "Windows 11 24H2 / 25H2"
@@ -18,11 +18,9 @@ def normalize_product(raw: str) -> str:
             return "Windows 11 22H2 / 23H2"
         return "Windows 11"
 
-    # Windows 10 bucket
     if "windows 10" in r:
         return "Windows 10 21H2 / 22H2 (incl. LTSC 2021)"
 
-    # Server buckets
     if "windows server 2022" in r:
         return "Windows Server 2022"
     if "windows server 2019" in r:
@@ -53,19 +51,37 @@ def badge(severity: str, title: str) -> str:
     return "Update"
 
 def fetch_json(url: str) -> dict:
-    req = Request(url, headers={"Accept": "application/json"})
+    # MSRC recommends standard JSON accept header. :contentReference[oaicite:1]{index=1}
+    req = Request(url, headers={"Accept": "application/json", "User-Agent": "github-action-msrc-fetch"})
     with urlopen(req) as r:
         return json.load(r)
+
+def fetch_all_updates():
+    """
+    Follow OData pagination (@odata.nextLink) and return the full list.
+    The /updates endpoint is paged. :contentReference[oaicite:2]{index=2}
+    """
+    items = []
+    url = UPDATES_URL + "?" + "&".join([
+        "$orderby=" + quote("CurrentReleaseDate desc"),
+        "$top=200"
+    ])
+
+    while url:
+        data = fetch_json(url)
+        page_items = data.get("value", [])
+        if isinstance(page_items, list):
+            items.extend(page_items)
+        url = data.get("@odata.nextLink")  # None when finished
+
+    return items
 
 def main():
     # Rolling 90 days from now (UTC)
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=90)
 
-    data = fetch_json(UPDATES_URL)
-
-    # MSRC API sometimes returns a top-level list, sometimes {"value":[...]}
-    items = data.get("value", data if isinstance(data, list) else [])
+    items = fetch_all_updates()
 
     out = []
 
@@ -82,7 +98,7 @@ def main():
         if dt < start or dt > end:
             continue
 
-        title = item.get("Title", "").strip()
+        title = (item.get("DocumentTitle") or item.get("Title") or "").strip()
         severity = (item.get("Severity") or "").strip()
         cvrf_url = (item.get("CvrfUrl") or item.get("Url") or "").strip()
 
@@ -117,4 +133,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
