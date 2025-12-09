@@ -4,7 +4,7 @@
     "kb": "2025-Dec",
     "product": "Microsoft Products",
     "classification": "Update",
-    "details": "Security update",
+    "details": "December 2025 Early Security Updates",
     "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
     "severity": "Update"
@@ -14,7 +14,7 @@
     "kb": "2025-Nov",
     "product": "Microsoft Products",
     "classification": "Update",
-    "details": "Security update",
+    "details": "November 2025 Security Updates",
     "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
     "severity": "Update"
@@ -24,7 +24,7 @@
     "kb": "2025-Oct",
     "product": "Microsoft Products",
     "classification": "Update",
-    "details": "Security update",
+    "details": "October 2025 Security Updates",
     "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
     "severity": "Update"
