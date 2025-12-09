@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 
 API_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0"
 UPDATES_URL = f"{API_BASE}/updates"
-CVRF_URL = f"{API_BASE}/cvrf"  # /cvrf/{ID}
+CVRF_URL = f"{API_BASE}/cvrf"
 
 KB_RE = re.compile(r"\bKB\d{6,8}\b", re.IGNORECASE)
 
@@ -57,11 +57,11 @@ def normalize_product(raw: str) -> str:
 def flatten_product_tree(product_tree: dict) -> dict:
     """
     Build ProductID -> ProductName map from CVRF ProductTree.
-    CVRF nests products in branches; we walk the FullProductName list.
+    CVRF nests products; FullProductName is the reliable ProductID map.
     """
     id_to_name = {}
     try:
-        full_names = product_tree.get("FullProductName", [])
+        full_names = product_tree.get("FullProductName", []) or []
         for p in full_names:
             pid = p.get("ProductID")
             val = p.get("Value")
@@ -71,27 +71,14 @@ def flatten_product_tree(product_tree: dict) -> dict:
         pass
     return id_to_name
 
-def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> list:
+def extract_remediation_rows(remediations, id_to_name, doc_date):
     """
-    Download a CVRF doc and extract:
-      - KB numbers (from Remediations/Description)
-      - affected products (from ProductID mapping)
-      - URLs if present
-    Output rows in your updates.json schema.
+    Extract KB rows from a list of remediation objects.
+    Handles ProductID/ProductIDs variants.
     """
-    url = f"{CVRF_URL}/{doc_id}"
-    cvrf = fetch_json(url)
-
-    product_tree = cvrf.get("ProductTree", {})
-    id_to_name = flatten_product_tree(product_tree)
-
-    remediations = []
-    try:
-        remediations = cvrf.get("Remediations", []) or []
-    except Exception:
-        remediations = []
-
     rows = []
+    if not isinstance(remediations, list):
+        return rows
 
     for r in remediations:
         desc = (r.get("Description") or "").strip()
@@ -104,7 +91,6 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
 
         kb = kb_match.group(0).upper()
 
-        # ProductIDs can be in ProductID or ProductIDs depending on schema
         pids = []
         if isinstance(r.get("ProductID"), str):
             pids = [r.get("ProductID")]
@@ -129,11 +115,37 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
                 "classification": "Security Update (Patch Tuesday)",
                 "details": desc if len(desc) < 280 else (desc[:277] + "..."),
                 "known_issues": "See Microsoft release notes / CVRF for details.",
-                "link": r_url or f"https://msrc.microsoft.com/update-guide",
+                "link": r_url or "https://msrc.microsoft.com/update-guide",
                 "severity": "Security"
             })
 
-    # If we somehow found no KBs, fall back to one doc-level row
+    return rows
+
+def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> list:
+    """
+    Download CVRF doc and extract KBs from:
+      1) Top-level Remediations
+      2) Vulnerability-level Remediations (most common place)
+    """
+    url = f"{CVRF_URL}/{doc_id}"
+    cvrf = fetch_json(url)
+
+    product_tree = cvrf.get("ProductTree", {}) or {}
+    id_to_name = flatten_product_tree(product_tree)
+
+    rows = []
+
+    # 1) Top-level Remediations
+    rows.extend(extract_remediation_rows(cvrf.get("Remediations", []), id_to_name, doc_date))
+
+    # 2) Vulnerability-level Remediations
+    vulns = cvrf.get("Vulnerability", []) or cvrf.get("Vulnerabilities", []) or []
+    if isinstance(vulns, list):
+        for v in vulns:
+            v_rems = v.get("Remediations", []) or v.get("Remediation", []) or []
+            rows.extend(extract_remediation_rows(v_rems, id_to_name, doc_date))
+
+    # If still nothing, fall back to a doc-level row
     if not rows:
         rows.append({
             "date": doc_date.date().isoformat(),
@@ -141,67 +153,4 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
             "product": "Microsoft Products",
             "classification": "Update",
             "details": doc_title or "Security updates",
-            "known_issues": "See Microsoft release notes / CVRF for details.",
-            "link": url,
-            "severity": "Update"
-        })
-
-    return rows
-
-def main():
-    end = datetime.now(timezone.utc)
-    start = end - timedelta(days=90)
-
-    docs = fetch_all_update_docs()
-
-    recent_docs = []
-    for d in docs:
-        date_str = d.get("InitialReleaseDate") or d.get("CurrentReleaseDate")
-        if not date_str:
-            continue
-        try:
-            dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-        except Exception:
-            continue
-        if dt < start or dt > end:
-            continue
-        recent_docs.append((d.get("ID"), d.get("DocumentTitle") or d.get("Title") or "", dt))
-
-    out = []
-    for doc_id, title, dt in recent_docs:
-        if not doc_id:
-            continue
-        try:
-            out.extend(extract_rows_from_cvrf(doc_id, title, dt))
-        except Exception as e:
-            # If a single CVRF doc fails, keep going
-            out.append({
-                "date": dt.date().isoformat(),
-                "kb": doc_id,
-                "product": "Microsoft Products",
-                "classification": "Update",
-                "details": f"{title} (CVRF parse failed)",
-                "known_issues": "CVRF fetch/parse error.",
-                "link": f"{CVRF_URL}/{doc_id}",
-                "severity": "Update"
-            })
-
-    # Deduplicate (same KB/product/date combos can repeat)
-    seen = set()
-    deduped = []
-    for r in out:
-        key = (r["date"], r["kb"], r["product"])
-        if key in seen:
-            continue
-        seen.add(key)
-        deduped.append(r)
-
-    deduped.sort(key=lambda x: x["date"], reverse=True)
-
-    with open("updates.json", "w", encoding="utf-8") as f:
-        json.dump(deduped, f, indent=2)
-
-    print(f"Wrote {len(deduped)} updates to updates.json")
-
-if __name__ == "__main__":
-    main()
+            "known_i_
