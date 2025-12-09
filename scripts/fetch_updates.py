@@ -2,7 +2,6 @@ import json
 import re
 from datetime import datetime, timedelta, timezone
 from urllib.request import Request, urlopen
-from urllib.parse import quote
 
 API_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0"
 UPDATES_URL = f"{API_BASE}/updates"
@@ -61,18 +60,20 @@ def fetch_json(url: str) -> dict:
         return json.load(r)
 
 def fetch_all_updates():
+    """
+    Follow OData pagination via @odata.nextLink.
+    We NO LONGER pass $orderby/$top because those are triggering 400s.
+    OData options are optional. :contentReference[oaicite:1]{index=1}
+    """
     items = []
-    url = UPDATES_URL + "?" + "&".join([
-        "$orderby=" + quote("CurrentReleaseDate desc"),
-        "$top=200"
-    ])
+    url = UPDATES_URL
 
     while url:
         data = fetch_json(url)
         page_items = data.get("value", [])
         if isinstance(page_items, list):
             items.extend(page_items)
-        url = data.get("@odata.nextLink")
+        url = data.get("@odata.nextLink")  # None when finished
 
     return items
 
