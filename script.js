@@ -1,95 +1,310 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Windows Updates & Patches — Last 90 Days</title>
-<style>
-    :root { --bg:#0b0f14; --card:#121821; --text:#e7eef5; --muted:#a3b3c2; --accent:#4da3ff; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; background: var(--bg); color: var(--text); }
-    header { padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,.08); }
-    h1 { margin:0 0 6px; font-size: 22px; line-height:1.2; }
-    .sub { color: var(--muted); font-size: 13px; }
-    .wrap { padding: 16px 24px 40px; }
-    .toolbar { display:flex; gap:8px; flex-wrap:wrap; margin: 12px 0 12px; align-items:center; }
-    .btn { appearance:none; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color:var(--text);
-            padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer; }
-    .btn:hover { background: rgba(255,255,255,.08); }
-    .btn:active { transform: translateY(1px); }
-    .searchbox { display:flex; gap:6px; align-items:center; background:rgba(255,255,255,.05); border-radius:10px; padding:6px 10px; }
-    .searchbox input { flex:1; background:none; border:none; color:var(--text); font-size:14px; outline:none; min-width:240px; }
-    .filterpanel { display:none; background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); padding:10px; border-radius:12px; margin: 4px 0 10px; }
-    .chips { display:flex; gap:12px; flex-wrap:wrap; }
-    .chip { display:flex; gap:6px; align-items:center; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:6px 8px; border-radius:999px; font-size:13px; }
-    .chip input { transform: translateY(1px); }
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; overflow-x:auto; box-shadow: 0 10px 30px rgba(0,0,0,.25);}
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    thead th { text-align: left; font-weight: 600; padding: 12px 16px; background: rgba(255,255,255,.03); position: sticky; top:0; }
-    tbody td { padding: 10px 16px; vertical-align: top; border-top: 1px solid rgba(255,255,255,.06); }
-    tbody tr:hover { background: rgba(77,163,255,.06); }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .badge { display:inline-block; padding: 4px 8px; border-radius: 999px; background: rgba(77,163,255,.15); color: var(--accent); font-size: 12px; font-weight: 600; }
-    .muted { color: var(--muted); }
-    footer { color: var(--muted); font-size: 12px; padding: 12px 2px 0; }
-    .meta { color: var(--muted); font-size: 12px; margin-left: 8px; }
-    @media print {
-        body { background: #fff; color:#000; }
-        header, .toolbar, .filterpanel, footer { display:none; }
-        .card { box-shadow: none; border: none; }
-        a { color: #000; text-decoration: underline; }
-        .badge { background: #eee; color: #000; }
+(function () {
+  // Wrap everything so we never fail silently
+  try {
+
+    // ---------- Helpers ----------
+    const $  = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+    const getText = (el) => (el?.textContent || "").trim();
+
+    function bust() { return `v=${Date.now()}`; }
+
+    async function tryFetchJSON(url) {
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+      const j = await r.json();
+      if (!Array.isArray(j)) throw new Error("JSON not an array");
+      return j;
     }
-</style>
-</head>
-<body>
-<header>
-  <h1>Windows Updates & Patches — Last 90 Days</h1>
-  <div class="sub" id="coverage">Coverage window: (calculating…)</div>
-  <div class="toolbar">
-    <div class="searchbox">
-      <input type="text" id="searchInput" placeholder="Search KB, OS version, details, or issues...">
-      <button class="btn" id="btnSearch">Search</button>
-      <button class="btn" id="btnClearSearch">Clear</button>
-      <span class="meta" id="matchCount"></span>
-    </div>
-    <button class="btn" id="btnSortOS" title="Sort by Product / OS">Sort by OS (A→Z)</button>
-    <button class="btn" id="btnResetSort" title="Reset to newest first">Reset sort</button>
-    <button class="btn" id="btnFilterOS" title="Filter by OS version">Filter by OS</button>
-    <button class="btn" id="btnPrint" title="Print to PDF">Print</button>
-    <button class="btn" id="btnEmail" title="Open email with summary">Email</button>
-  </div>
-</header>
 
-<div class="wrap">
-  <div class="card">
-    <table id="updatesTable">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>KB</th>
-          <th>Product / Version</th>
-          <th>Classification</th>
-          <th>Details</th>
-          <th>Known issues</th>
-          <th>Severity</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+    // ---------- Load updates ----------
+    async function loadUpdates() {
+      const BASE = location.origin + location.pathname.replace(/\/[^\/]*$/, "/");
 
-  <footer>
-    <span id="generatedAt"></span>
-    • Tip: Search narrows results live and works together with OS filters. Email uses whatever is currently visible.
-  </footer>
-</div>
+      const candidates = [
+        `${BASE}updates.json?${bust()}`,
+        `${location.origin}/MS-Updates/updates.json?${bust()}`,
+        `${location.origin}/updates.json?${bust()}`
+      ];
 
-<!-- Cache-bust script.js so GitHub Pages never serves an old copy -->
-<script src="script.js?v=20251209"></script>
-</body>
-</html>
+      let updates = [];
+      let sourceNote = "";
+
+      // 1) updates.json (auto-updated)
+      for (const url of candidates) {
+        try {
+          const list = await tryFetchJSON(url);
+          if (list.length) {
+            updates = list;
+            sourceNote = `updates.json (${url.replace(/\?.*$/, "")})`;
+            break;
+          }
+        } catch (_) {}
+      }
+
+      // 2) If updates.json failed, fallback-updates.json (your old static list)
+      if (!updates.length) {
+        const fbCandidates = [
+          `${BASE}fallback-updates.json?${bust()}`,
+          `${location.origin}/MS-Updates/fallback-updates.json?${bust()}`,
+          `${location.origin}/fallback-updates.json?${bust()}`
+        ];
+        for (const url of fbCandidates) {
+          try {
+            const list = await tryFetchJSON(url);
+            if (list.length) {
+              updates = list;
+              sourceNote = `fallback-updates.json (${url.replace(/\?.*$/, "")})`;
+              break;
+            }
+          } catch (_) {}
+        }
+      }
+
+      // 3) Merge server-updates.json if present
+      const serverCandidates = [
+        `${BASE}server-updates.json?${bust()}`,
+        `${location.origin}/MS-Updates/server-updates.json?${bust()}`,
+        `${location.origin}/server-updates.json?${bust()}`
+      ];
+      for (const url of serverCandidates) {
+        try {
+          const list = await tryFetchJSON(url);
+          if (list.length) updates.push(...list);
+          if (!sourceNote) sourceNote = "server-updates.json only";
+          break;
+        } catch (_) {}
+      }
+
+      // 4) Merge manual extras from localStorage
+      try {
+        const extra = JSON.parse(localStorage.getItem("extraUpdates") || "[]");
+        if (Array.isArray(extra) && extra.length) updates.push(...extra);
+      } catch (_) {}
+
+      return { updates, sourceNote: sourceNote || "none (no JSON found)" };
+    }
+
+    // ---------- Date / rendering ----------
+    const coverageEl = $("#coverage");
+    const genEl = $("#generatedAt");
+    const tbody = $("#updatesTable tbody");
+
+    const today = new Date();
+    const start = new Date(today);
+    start.setDate(start.getDate() - 90);
+
+    function fmtDate(d) {
+      return d.toLocaleString(undefined, { month: "short", day: "2-digit", year: "numeric" });
+    }
+    function fmtDateISO(iso) {
+      const d = new Date(iso + "T00:00:00");
+      return d.toLocaleString(undefined, { month: "short", day: "2-digit", year: "numeric" });
+    }
+    function rowHTML(u) {
+      return `<tr>
+        <td data-col="date">${fmtDateISO(u.date)}</td>
+        <td data-col="kb"><a href="${u.link}" target="_blank" rel="noopener">${u.kb}</a></td>
+        <td data-col="product">${u.product}</td>
+        <td data-col="class">${u.classification}</td>
+        <td data-col="details">${u.details}</td>
+        <td data-col="issues">${u.known_issues}</td>
+        <td data-col="sev"><span class="badge">${u.severity}</span></td>
+      </tr>`;
+    }
+
+    // Add data-source line under coverage
+    const sourceEl = document.createElement("div");
+    sourceEl.className = "sub muted";
+    sourceEl.style.marginTop = "4px";
+    coverageEl.insertAdjacentElement("afterend", sourceEl);
+
+    // ---------- Sort / filter UI (your original behavior) ----------
+    let osAsc = true;
+
+    function sortByOS() {
+      const rows = $$("#updatesTable tbody tr");
+      rows.sort((a, b) => {
+        const ap = getText(a.querySelector('td[data-col="product"]')).toLowerCase();
+        const bp = getText(b.querySelector('td[data-col="product"]')).toLowerCase();
+        if (ap < bp) return osAsc ? -1 : 1;
+        if (ap > bp) return osAsc ? 1 : -1;
+
+        const ad = Date.parse(getText(a.querySelector('td[data-col="date"]')));
+        const bd = Date.parse(getText(b.querySelector('td[data-col="date"]')));
+        return bd - ad;
+      });
+      tbody.innerHTML = "";
+      rows.forEach(r => tbody.appendChild(r));
+      $("#btnSortOS").textContent = osAsc ? "Sort by OS (Z→A)" : "Sort by OS (A→Z)";
+      osAsc = !osAsc;
+      applyCombinedFilter();
+    }
+
+    function resetSort() {
+      tbody.innerHTML = window.__updates.map(rowHTML).join("");
+      osAsc = true;
+      $("#btnSortOS").textContent = "Sort by OS (A→Z)";
+      buildChips();
+      applyCombinedFilter();
+    }
+
+    const panel = document.createElement("div");
+    panel.id = "filterPanel";
+    panel.className = "filterpanel";
+    const chips = document.createElement("div");
+    chips.id = "chips";
+    chips.className = "chips";
+    const controls = document.createElement("div");
+    controls.style.cssText = "margin-top:8px; display:flex; gap:8px; align-items:center;";
+    const btnAll = document.createElement("button");
+    btnAll.className = "btn"; btnAll.id = "btnSelectAll"; btnAll.textContent = "Select all";
+    const btnClr = document.createElement("button");
+    btnClr.className = "btn"; btnClr.id = "btnClear"; btnClr.textContent = "Clear";
+    const note = document.createElement("span");
+    note.className = "muted"; note.id = "activeFilterNote";
+    controls.append(btnAll, btnClr, note);
+
+    document.querySelector("header").append(panel);
+    panel.append(chips, controls);
+
+    function uniqueProducts() {
+      const set = new Set();
+      $$('#updatesTable td[data-col="product"]').forEach(td => set.add(getText(td)));
+      return Array.from(set).sort((a, b) => a.localeCompare(b));
+    }
+
+    function buildChips() {
+      chips.innerHTML = "";
+      uniqueProducts().forEach(p => {
+        const id = "chk_" + p.replace(/[^a-z0-9]+/gi, "_");
+        const lab = document.createElement("label");
+        lab.className = "chip";
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.checked = true;
+        input.dataset.os = p;
+        input.id = id;
+        const span = document.createElement("span");
+        span.textContent = p;
+        lab.appendChild(input);
+        lab.appendChild(span);
+        chips.appendChild(lab);
+        input.addEventListener("change", applyCombinedFilter);
+      });
+    }
+
+    function activeOSList() {
+      return Array.from(chips.querySelectorAll('input[type="checkbox"]'))
+        .filter(cb => cb.checked).map(cb => cb.dataset.os);
+    }
+    function allOSList() {
+      return Array.from(chips.querySelectorAll('input[type="checkbox"]'))
+        .map(cb => cb.dataset.os);
+    }
+
+    const searchInput = $("#searchInput");
+    const matchCount = $("#matchCount");
+
+    function applyCombinedFilter() {
+      const term = (searchInput?.value || "").toLowerCase().trim();
+      const active = activeOSList();
+      const all = allOSList();
+      let shown = 0;
+
+      $$("#updatesTable tbody tr").forEach(tr => {
+        const product = getText(tr.querySelector('td[data-col="product"]'));
+        const text = tr.innerText.toLowerCase();
+        const matchOS = active.length === 0 ? false : active.includes(product);
+        const matchSearch = term === "" ? true : text.includes(term);
+        const visible = matchOS && matchSearch;
+        tr.style.display = visible ? "" : "none";
+        if (visible) shown++;
+      });
+
+      note.textContent = active.length === all.length || active.length === 0
+        ? ""
+        : ("Active OS filters: " + active.join(", "));
+
+      matchCount.textContent = term ? `${shown} match${shown === 1 ? "" : "es"}` : "";
+    }
+
+    function toEmailSafe(text, maxLen) {
+      const enc = encodeURIComponent(text);
+      return enc.length > maxLen ? enc.slice(0, maxLen) + "%0A%0A%5Btruncated%5D" : enc;
+    }
+
+    function draftEmail() {
+      const lines = [];
+      lines.push("Windows Updates & Patches — Last 90 Days");
+      lines.push(`Coverage: ${fmtDate(start)} to ${fmtDate(today)}`);
+      lines.push("");
+
+      $$("#updatesTable tbody tr").forEach(tr => {
+        if (tr.style.display === "none") return;
+        const date = getText(tr.querySelector('td[data-col="date"]'));
+        const kb = getText(tr.querySelector('td[data-col="kb"]'));
+        const kbLink = tr.querySelector('td[data-col="kb"] a')?.href || "";
+        const product = getText(tr.querySelector('td[data-col="product"]'));
+        const cls = getText(tr.querySelector('td[data-col="class"]'));
+        const sev = getText(tr.querySelector('td[data-col="sev"]'));
+        const issues = getText(tr.querySelector('td[data-col="issues"]'));
+
+        lines.push(`• ${date} — ${kb} — ${product} — ${sev} — ${cls}\n  ${kbLink}\n  Issues: ${issues}`);
+      });
+
+      lines.push("\n(Attach the HTML report if needed)");
+
+      const mailto = "mailto:?subject=" +
+        encodeURIComponent("Windows updates (last 90 days)") +
+        "&body=" + toEmailSafe(lines.join("\n"), 1800);
+
+      window.location.href = mailto;
+    }
+
+    $("#btnSortOS").addEventListener("click", sortByOS);
+    $("#btnResetSort").addEventListener("click", resetSort);
+    $("#btnFilterOS").addEventListener("click", () => {
+      panel.style.display = (panel.style.display === "none" || panel.style.display === "") ? "block" : "none";
+    });
+    $("#btnPrint").addEventListener("click", () => window.print());
+    $("#btnEmail").addEventListener("click", draftEmail);
+
+    $("#btnSearch").addEventListener("click", applyCombinedFilter);
+    $("#btnClearSearch").addEventListener("click", () => { searchInput.value = ""; applyCombinedFilter(); });
+    searchInput.addEventListener("keyup", (e) => { if (e.key === "Enter") applyCombinedFilter(); });
+
+    btnAll.addEventListener("click", () => {
+      chips.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+      applyCombinedFilter();
+    });
+    btnClr.addEventListener("click", () => {
+      chips.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      applyCombinedFilter();
+    });
+
+    // ---------- Boot ----------
+    (async function init() {
+      coverageEl.textContent = "Coverage window: (loading…)";
+
+      const { updates, sourceNote } = await loadUpdates();
+      sourceEl.textContent = `Data source: ${sourceNote}`;
+
+      window.__updates = updates
+        .filter(u => u?.date && u?.kb)
+        .sort((a, b) => a.date < b.date ? 1 : -1);
+
+      coverageEl.textContent = `Coverage window: ${fmtDate(start)} → ${fmtDate(today)}`;
+      genEl.textContent = `Generated at: ${new Date().toLocaleString()}`;
+
+      tbody.innerHTML = window.__updates.map(rowHTML).join("");
+      buildChips();
+      applyCombinedFilter();
+    })();
+
+  } catch (err) {
+    console.error("script.js fatal error:", err);
+    const coverageEl = document.getElementById("coverage");
+    if (coverageEl) coverageEl.textContent = "Coverage window: ERROR loading script.js (see console)";
+  }
+})();
