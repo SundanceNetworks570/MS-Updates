@@ -2,9 +2,8 @@ name: Update updates.json
 
 on:
   schedule:
-    # Every 6 hours (UTC): catches same-day Patch Tuesday drops
-    - cron: "15 */6 * * *"
-  workflow_dispatch: {}    # allow manual Run Workflow button anytime
+    - cron: "15 */6 * * *"   # every 6 hours UTC
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -16,13 +15,27 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Show repo files (debug)
+        run: |
+          echo "=== Repo root ==="
+          ls -la
+          echo "=== scripts folder ==="
+          ls -la scripts || true
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Generate updates.json
-        run: python scripts/fetch_updates.py
+      - name: Run fetch script (debug)
+        run: |
+          python --version
+          python -u scripts/fetch_updates.py
+
+      - name: Show updates.json (debug)
+        run: |
+          echo "=== updates.json head ==="
+          head -n 40 updates.json || true
 
       - name: Commit and push if changed
         run: |
