@@ -10,11 +10,7 @@ CVRF_URL = f"{API_BASE}/cvrf"
 KB_RE = re.compile(r"\bKB\d{6,8}\b", re.IGNORECASE)
 
 def to_text(x) -> str:
-    """
-    Safely coerce MSRC fields into text.
-    Handles strings, dicts like {"Value": "..."} or {"Text": "..."},
-    lists, None, etc.
-    """
+    """Safely coerce MSRC fields into text."""
     if x is None:
         return ""
     if isinstance(x, str):
@@ -22,12 +18,10 @@ def to_text(x) -> str:
     if isinstance(x, (int, float, bool)):
         return str(x)
     if isinstance(x, dict):
-        # common MSRC patterns
         for k in ("Value", "Text", "Title", "Description", "Name"):
             v = x.get(k)
             if isinstance(v, str) and v.strip():
                 return v
-        # fallback: stringify dict
         return json.dumps(x, ensure_ascii=False)
     if isinstance(x, list):
         return " ".join(to_text(i) for i in x if to_text(i))
@@ -45,9 +39,7 @@ def fetch_text(url: str) -> str:
         return r.read().decode("utf-8", errors="replace")
 
 def fetch_json_or_xml(url: str):
-    """
-    Try JSON first. If it fails and looks like XML, return raw XML.
-    """
+    """Try JSON. If XML, return raw XML for regex fallback."""
     raw = fetch_text(url)
     try:
         return json.loads(raw)
@@ -169,7 +161,7 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
                 "kb": kb.upper(),
                 "product": "Microsoft Products",
                 "classification": "Security Update (Patch Tuesday)",
-                "details": f"{doc_title} (extracted from XML fallback)",
+                "details": f"{doc_title} (KB extracted from XML fallback)",
                 "known_issues": "See Microsoft release notes / CVRF for details.",
                 "link": url,
                 "severity": "Security"
@@ -214,6 +206,24 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
             )
             rows.extend(extract_remediation_rows(v_rems, id_to_name, doc_date))
 
+    # 3) GLOBAL JSON SCAN FALLBACK (NEW)
+    # If structured scraping found no KBs, scan the entire JSON blob.
+    if not rows:
+        blob = json.dumps(cvrf, ensure_ascii=False)
+        kb_list = sorted(set(KB_RE.findall(blob)))
+        for kb in kb_list:
+            rows.append({
+                "date": doc_date.date().isoformat(),
+                "kb": kb.upper(),
+                "product": "Microsoft Products",
+                "classification": "Security Update (Patch Tuesday)",
+                "details": f"{doc_title} (KB extracted from JSON scan)",
+                "known_issues": "See Microsoft release notes / CVRF for details.",
+                "link": url,
+                "severity": "Security"
+            })
+
+    # If still nothing, fall back to doc-level row
     if not rows:
         rows.append({
             "date": doc_date.date().isoformat(),
@@ -250,11 +260,9 @@ def main():
 
         title_raw = d.get("DocumentTitle") or d.get("Title") or ""
         title = to_text(title_raw).strip()
-
         recent_docs.append((d.get("ID"), title, dt))
 
     out = []
-
     for doc_id, title, dt in recent_docs:
         if not doc_id:
             continue
