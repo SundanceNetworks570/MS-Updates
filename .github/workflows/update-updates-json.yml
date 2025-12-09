@@ -1,0 +1,32 @@
+name: Update updates.json
+
+on:
+  schedule:
+    - cron: "15 11 * * *"  # daily at 11:15 UTC (6:15am ET)
+  workflow_dispatch: {}    # allow manual Run Workflow button
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate updates.json
+        run: python scripts/fetch_updates.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add updates.json
+          git diff --cached --quiet || git commit -m "Auto-update updates.json"
+          git push
