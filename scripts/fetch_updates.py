@@ -1,302 +1,160 @@
+#!/usr/bin/env python3
 import json
 import re
-from datetime import datetime, timedelta, timezone
-from urllib.request import Request, urlopen
+import sys
+import urllib.request
+import urllib.error
+from datetime import datetime, timedelta, date
+from typing import Any, Dict, List, Set, Tuple
 
-API_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0"
-UPDATES_URL = f"{API_BASE}/updates"
-CVRF_URL = f"{API_BASE}/cvrf"
+MSRC_BASE = "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/"
+UA = "Mozilla/5.0 (MS-Updates GitHub Action)"
 
-KB_RE = re.compile(r"\bKB\d{6,8}\b", re.IGNORECASE)
+KB_RE = re.compile(r"\bKB\s*([0-9]{6,8})\b", re.IGNORECASE)
 
-def to_text(x) -> str:
-    """Safely coerce MSRC fields into text."""
-    if x is None:
-        return ""
-    if isinstance(x, str):
-        return x
-    if isinstance(x, (int, float, bool)):
-        return str(x)
-    if isinstance(x, dict):
-        for k in ("Value", "Text", "Title", "Description", "Name"):
-            v = x.get(k)
-            if isinstance(v, str) and v.strip():
-                return v
-        return json.dumps(x, ensure_ascii=False)
-    if isinstance(x, list):
-        return " ".join(to_text(i) for i in x if to_text(i))
-    return str(x)
-
-def fetch_text(url: str) -> str:
-    req = Request(
-        url,
-        headers={
-            "Accept": "application/json",
-            "User-Agent": "github-action-msrc-fetch"
-        },
-    )
-    with urlopen(req) as r:
-        return r.read().decode("utf-8", errors="replace")
-
-def fetch_json_or_xml(url: str):
-    """Try JSON. If XML, return raw XML for regex fallback."""
-    raw = fetch_text(url)
-    try:
+def fetch_json(url: str, timeout: int = 30) -> Any:
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "application/json"
+    })
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        raw = r.read().decode("utf-8", errors="replace")
         return json.loads(raw)
-    except Exception as e:
-        if raw.lstrip().startswith("<"):
-            return {"__raw_xml": raw, "__json_error": str(e)}
-        snippet = raw[:250].replace("\n", " ")
-        raise RuntimeError(f"Non-JSON response and not XML. First 250 chars: {snippet}") from e
 
-def fetch_all_update_docs():
-    """Follow @odata.nextLink to get all monthly CVRF doc headers."""
-    items = []
-    url = UPDATES_URL
-    while url:
-        data = fetch_json_or_xml(url)
-        page_items = data.get("value", [])
-        if isinstance(page_items, list):
-            items.extend(page_items)
-        url = data.get("@odata.nextLink")
-    return items
+def month_id(dt: date) -> str:
+    return dt.strftime("%Y-%b")  # e.g., 2025-Dec
 
-def normalize_product(raw: str) -> str:
-    r = (raw or "").lower()
+def iter_months_in_last_n_days(n_days: int) -> List[date]:
+    """Return list of month-start dates that overlap last n_days."""
+    end = date.today()
+    start = end - timedelta(days=n_days)
 
-    if "windows 11" in r:
-        if "24h2" in r or "25h2" in r:
-            return "Windows 11 24H2 / 25H2"
-        if "23h2" in r or "22h2" in r:
-            return "Windows 11 22H2 / 23H2"
-        return "Windows 11"
+    months = []
+    cur = date(start.year, start.month, 1)
+    while cur <= end:
+        months.append(cur)
+        # advance 1 month
+        if cur.month == 12:
+            cur = date(cur.year + 1, 1, 1)
+        else:
+            cur = date(cur.year, cur.month + 1, 1)
+    return months
 
-    if "windows 10" in r:
-        return "Windows 10 21H2 / 22H2 (incl. LTSC 2021)"
+def second_tuesday(year: int, month: int) -> date:
+    """Compute Patch Tuesday (second Tuesday) for given month."""
+    d = date(year, month, 1)
+    # weekday(): Mon=0,..Sun=6; Tue=1
+    while d.weekday() != 1:
+        d += timedelta(days=1)
+    # first Tuesday found; add 7 for second Tuesday
+    return d + timedelta(days=7)
 
-    if "windows server 2022" in r:
-        return "Windows Server 2022"
-    if "windows server 2019" in r:
-        return "Windows Server 2019"
-    if "windows server 2016" in r:
-        return "Windows Server 2016"
+def kb_to_catalog_link(kb: str) -> str:
+    """
+    Turn 'KB5066586' into a Microsoft Update Catalog search URL.
+    """
+    if not kb:
+        return ""
+    m = re.search(r"KB\s*(\d+)", kb.upper())
+    if not m:
+        return ""
+    num = m.group(1)
+    return f"https://www.catalog.update.microsoft.com/Search.aspx?q=KB{num}"
 
-    return raw or "Other"
+def scan_for_kbs(obj: Any, found: Set[str]) -> None:
+    """Recursively scan any JSON-like structure for KB patterns."""
+    if obj is None:
+        return
+    if isinstance(obj, str):
+        for m in KB_RE.finditer(obj):
+            found.add("KB" + m.group(1))
+        return
+    if isinstance(obj, dict):
+        for v in obj.values():
+            scan_for_kbs(v, found)
+        return
+    if isinstance(obj, list):
+        for item in obj:
+            scan_for_kbs(item, found)
+        return
 
-def flatten_product_tree(product_tree: dict) -> dict:
-    """Build ProductID -> ProductName map from CVRF ProductTree."""
-    id_to_name = {}
+def build_rows_for_month(cvrf_month: date) -> List[Dict[str, str]]:
+    mid = month_id(cvrf_month)
+    cvrf_url = MSRC_BASE + mid
+
     try:
-        full_names = product_tree.get("FullProductName", []) or []
-        for p in full_names:
-            pid = p.get("ProductID")
-            val = to_text(p.get("Value"))
-            if pid and val:
-                id_to_name[pid] = val
-    except Exception:
-        pass
-    return id_to_name
-
-def extract_remediation_rows(remediations, id_to_name, doc_date):
-    rows = []
-
-    if isinstance(remediations, dict):
-        remediations = [remediations]
-    if not isinstance(remediations, list):
-        return rows
-
-    for r in remediations:
-        desc = to_text(r.get("Description")).strip()
-        if not desc:
-            continue
-
-        kb_match = KB_RE.search(desc)
-        if not kb_match:
-            continue
-
-        kb = kb_match.group(0).upper()
-
-        pids = []
-        if isinstance(r.get("ProductID"), str):
-            pids = [r.get("ProductID")]
-        elif isinstance(r.get("ProductIDs"), list):
-            pids = r.get("ProductIDs")
-        elif isinstance(r.get("ProductIDs"), str):
-            pids = [r.get("ProductIDs")]
-
-        if not pids:
-            pids = [None]
-
-        r_url = to_text(r.get("URL") or r.get("Url") or r.get("Link"))
-
-        for pid in pids:
-            pname_raw = id_to_name.get(pid, "Microsoft Products")
-            pname = normalize_product(pname_raw)
-
-            rows.append({
-                "date": doc_date.date().isoformat(),
-                "kb": kb,
-                "product": pname,
-                "classification": "Security Update (Patch Tuesday)",
-                "details": desc if len(desc) < 280 else (desc[:277] + "..."),
-                "known_issues": "See Microsoft release notes / CVRF for details.",
-                "link": r_url or "https://msrc.microsoft.com/update-guide",
-                "severity": "Security"
-            })
-
-    return rows
-
-def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> list:
-    url = f"{CVRF_URL}/{doc_id}"
-    cvrf = fetch_json_or_xml(url)
-
-    # ---------- XML fallback ----------
-    if "__raw_xml" in cvrf:
-        xml_text = cvrf["__raw_xml"]
-        kb_list = sorted(set(KB_RE.findall(xml_text)))
-        rows = []
-        for kb in kb_list:
-            rows.append({
-                "date": doc_date.date().isoformat(),
-                "kb": kb.upper(),
-                "product": "Microsoft Products",
-                "classification": "Security Update (Patch Tuesday)",
-                "details": f"{doc_title} (KB extracted from XML fallback)",
-                "known_issues": "See Microsoft release notes / CVRF for details.",
-                "link": url,
-                "severity": "Security"
-            })
-        if not rows:
-            rows.append({
-                "date": doc_date.date().isoformat(),
-                "kb": doc_id,
-                "product": "Microsoft Products",
-                "classification": "Update",
-                "details": f"{doc_title} (XML fallback, no KBs detected)",
-                "known_issues": "See Microsoft release notes / CVRF for details.",
-                "link": url,
-                "severity": "Update"
-            })
-        return rows
-
-    # ---------- JSON path ----------
-    product_tree = cvrf.get("ProductTree", {}) or {}
-    id_to_name = flatten_product_tree(product_tree)
-
-    rows = []
-
-    # 1) Top-level remediations
-    rows.extend(extract_remediation_rows(cvrf.get("Remediations", []) or [], id_to_name, doc_date))
-
-    # 2) Per-vulnerability remediations
-    vulns = (
-        cvrf.get("Vulnerability", [])
-        or cvrf.get("Vulnerabilities", [])
-        or []
-    )
-    if isinstance(vulns, dict):
-        vulns = [vulns]
-
-    if isinstance(vulns, list):
-        for v in vulns:
-            v_rems = (
-                v.get("Remediations", [])
-                or v.get("Remediation", [])
-                or []
-            )
-            rows.extend(extract_remediation_rows(v_rems, id_to_name, doc_date))
-
-    # 3) GLOBAL JSON SCAN FALLBACK (NEW)
-    # If structured scraping found no KBs, scan the entire JSON blob.
-    if not rows:
-        blob = json.dumps(cvrf, ensure_ascii=False)
-        kb_list = sorted(set(KB_RE.findall(blob)))
-        for kb in kb_list:
-            rows.append({
-                "date": doc_date.date().isoformat(),
-                "kb": kb.upper(),
-                "product": "Microsoft Products",
-                "classification": "Security Update (Patch Tuesday)",
-                "details": f"{doc_title} (KB extracted from JSON scan)",
-                "known_issues": "See Microsoft release notes / CVRF for details.",
-                "link": url,
-                "severity": "Security"
-            })
-
-    # If still nothing, fall back to doc-level row
-    if not rows:
-        rows.append({
-            "date": doc_date.date().isoformat(),
-            "kb": doc_id,
+        data = fetch_json(cvrf_url)
+    except Exception as e:
+        print(f"Error: Failed fetching CVRF {mid}: {e}", file=sys.stderr)
+        return [{
+            "date": str(cvrf_month),
+            "kb": mid,
             "product": "Microsoft Products",
             "classification": "Update",
-            "details": f"{doc_title} (JSON parsed, but no KBs found)",
-            "known_issues": "See Microsoft release notes / CVRF for details.",
-            "link": url,
+            "details": f"{mid} Security Updates (CVRF fetch failed)",
+            "known_issues": "CVRF fetch error.",
+            "link": cvrf_url,
             "severity": "Update"
-        })
+        }]
 
+    found: Set[str] = set()
+    scan_for_kbs(data, found)
+
+    if not found:
+        return [{
+            "date": str(cvrf_month),
+            "kb": mid,
+            "product": "Microsoft Products",
+            "classification": "Update",
+            "details": f"{mid} Security Updates (JSON parsed, but no KBs found)",
+            "known_issues": "See Microsoft release notes / CVRF for details.",
+            "link": cvrf_url,
+            "severity": "Update"
+        }]
+
+    pt = second_tuesday(cvrf_month.year, cvrf_month.month)
+    pt_str = pt.isoformat()
+
+    rows = []
+    for kb in sorted(found):
+        rows.append({
+            "date": pt_str,
+            "kb": kb,
+            "product": "Microsoft Products",
+            "classification": "Security Update (Patch Tuesday)",
+            "details": f"{cvrf_month.strftime('%B %Y')} Security Updates (KB extracted from JSON scan)",
+            "known_issues": "See Microsoft release notes / CVRF for details.",
+            "link": kb_to_catalog_link(kb) or cvrf_url,
+            "severity": "Security"
+        })
     return rows
 
-def main():
-    end = datetime.now(timezone.utc)
-    start = end - timedelta(days=90)
-
-    docs = fetch_all_update_docs()
-
-    recent_docs = []
-    for d in docs:
-        date_str = d.get("InitialReleaseDate") or d.get("CurrentReleaseDate")
-        if not date_str:
-            continue
-
-        try:
-            dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-        except Exception:
-            continue
-
-        if dt < start or dt > end:
-            continue
-
-        title_raw = d.get("DocumentTitle") or d.get("Title") or ""
-        title = to_text(title_raw).strip()
-        recent_docs.append((d.get("ID"), title, dt))
-
-    out = []
-    for doc_id, title, dt in recent_docs:
-        if not doc_id:
-            continue
-        try:
-            out.extend(extract_rows_from_cvrf(doc_id, title, dt))
-        except Exception as e:
-            print(f"[ERROR] Failed parsing CVRF {doc_id}: {e}")
-            out.append({
-                "date": dt.date().isoformat(),
-                "kb": doc_id,
-                "product": "Microsoft Products",
-                "classification": "Update",
-                "details": f"{title} (CVRF parse failed)",
-                "known_issues": "CVRF fetch/parse error.",
-                "link": f"{CVRF_URL}/{doc_id}",
-                "severity": "Update"
-            })
-
-    # Deduplicate
-    seen = set()
-    deduped = []
-    for r in out:
-        key = (r["date"], r["kb"], r["product"])
+def dedupe_rows(rows: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    seen: Set[Tuple[str, str, str]] = set()
+    out: List[Dict[str, str]] = []
+    for r in rows:
+        key = (r.get("date", ""), r.get("kb", ""), r.get("product", ""))
         if key in seen:
             continue
         seen.add(key)
-        deduped.append(r)
+        out.append(r)
+    out.sort(key=lambda x: x.get("date", ""), reverse=True)
+    return out
 
-    deduped.sort(key=lambda x: x["date"], reverse=True)
+def main():
+    months = iter_months_in_last_n_days(90)
 
-    with open("updates.json", "w", encoding="utf-8") as f:
+    all_rows: List[Dict[str, str]] = []
+    for m in months:
+        all_rows.extend(build_rows_for_month(m))
+
+    deduped = dedupe_rows(all_rows)
+
+    out_path = "updates.json"
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(deduped, f, indent=2)
 
-    print(f"Wrote {len(deduped)} updates to updates.json")
+    print(f"Wrote {len(deduped)} updates to {out_path}")
 
 if __name__ == "__main__":
     main()
