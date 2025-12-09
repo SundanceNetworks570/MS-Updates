@@ -21,7 +21,7 @@ def fetch_json(url: str) -> dict:
         return json.load(r)
 
 def fetch_all_update_docs():
-    """Follow @odata.nextLink to get ALL monthly CVRF doc headers."""
+    """Follow @odata.nextLink to get all monthly CVRF doc headers."""
     items = []
     url = UPDATES_URL
     while url:
@@ -57,7 +57,7 @@ def normalize_product(raw: str) -> str:
 def flatten_product_tree(product_tree: dict) -> dict:
     """
     Build ProductID -> ProductName map from CVRF ProductTree.
-    CVRF nests products; FullProductName is the reliable ProductID map.
+    FullProductName is the reliable ID map.
     """
     id_to_name = {}
     try:
@@ -91,6 +91,7 @@ def extract_remediation_rows(remediations, id_to_name, doc_date):
 
         kb = kb_match.group(0).upper()
 
+        # Product IDs may be in ProductID or ProductIDs
         pids = []
         if isinstance(r.get("ProductID"), str):
             pids = [r.get("ProductID")]
@@ -125,7 +126,7 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
     """
     Download CVRF doc and extract KBs from:
       1) Top-level Remediations
-      2) Vulnerability-level Remediations (most common place)
+      2) Vulnerability-level Remediations (most common)
     """
     url = f"{CVRF_URL}/{doc_id}"
     cvrf = fetch_json(url)
@@ -135,17 +136,32 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
 
     rows = []
 
-    # 1) Top-level Remediations
-    rows.extend(extract_remediation_rows(cvrf.get("Remediations", []), id_to_name, doc_date))
+    # 1) Top-level remediations
+    rows.extend(
+        extract_remediation_rows(
+            cvrf.get("Remediations", []) or [],
+            id_to_name,
+            doc_date
+        )
+    )
 
-    # 2) Vulnerability-level Remediations
-    vulns = cvrf.get("Vulnerability", []) or cvrf.get("Vulnerabilities", []) or []
+    # 2) Per-vulnerability remediations
+    vulns = (
+        cvrf.get("Vulnerability", [])
+        or cvrf.get("Vulnerabilities", [])
+        or []
+    )
+
     if isinstance(vulns, list):
         for v in vulns:
-            v_rems = v.get("Remediations", []) or v.get("Remediation", []) or []
+            v_rems = (
+                v.get("Remediations", [])
+                or v.get("Remediation", [])
+                or []
+            )
             rows.extend(extract_remediation_rows(v_rems, id_to_name, doc_date))
 
-    # If still nothing, fall back to a doc-level row
+    # Fallback if no KBs found
     if not rows:
         rows.append({
             "date": doc_date.date().isoformat(),
@@ -153,4 +169,73 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
             "product": "Microsoft Products",
             "classification": "Update",
             "details": doc_title or "Security updates",
-            "known_i_
+            "known_issues": "See Microsoft release notes / CVRF for details.",
+            "link": url,
+            "severity": "Update"
+        })
+
+    return rows
+
+def main():
+    end = datetime.now(timezone.utc)
+    start = end - timedelta(days=90)
+
+    docs = fetch_all_update_docs()
+
+    recent_docs = []
+    for d in docs:
+        date_str = d.get("InitialReleaseDate") or d.get("CurrentReleaseDate")
+        if not date_str:
+            continue
+
+        try:
+            dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        except Exception:
+            continue
+
+        if dt < start or dt > end:
+            continue
+
+        recent_docs.append((
+            d.get("ID"),
+            d.get("DocumentTitle") or d.get("Title") or "",
+            dt
+        ))
+
+    out = []
+    for doc_id, title, dt in recent_docs:
+        if not doc_id:
+            continue
+        try:
+            out.extend(extract_rows_from_cvrf(doc_id, title, dt))
+        except Exception:
+            out.append({
+                "date": dt.date().isoformat(),
+                "kb": doc_id,
+                "product": "Microsoft Products",
+                "classification": "Update",
+                "details": f"{title} (CVRF parse failed)",
+                "known_issues": "CVRF fetch/parse error.",
+                "link": f"{CVRF_URL}/{doc_id}",
+                "severity": "Update"
+            })
+
+    # Deduplicate
+    seen = set()
+    deduped = []
+    for r in out:
+        key = (r["date"], r["kb"], r["product"])
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(r)
+
+    deduped.sort(key=lambda x: x["date"], reverse=True)
+
+    with open("updates.json", "w", encoding="utf-8") as f:
+        json.dump(deduped, f, indent=2)
+
+    print(f"Wrote {len(deduped)} updates to updates.json")
+
+if __name__ == "__main__":
+    main()
