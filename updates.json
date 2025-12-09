@@ -6,7 +6,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066586",
     "severity": "Security"
   },
   {
@@ -16,7 +16,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066780",
     "severity": "Security"
   },
   {
@@ -26,7 +26,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066782",
     "severity": "Security"
   },
   {
@@ -36,7 +36,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066791",
     "severity": "Security"
   },
   {
@@ -46,7 +46,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066793",
     "severity": "Security"
   },
   {
@@ -56,7 +56,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066835",
     "severity": "Security"
   },
   {
@@ -66,7 +66,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066836",
     "severity": "Security"
   },
   {
@@ -76,7 +76,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066837",
     "severity": "Security"
   },
   {
@@ -86,7 +86,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068779",
     "severity": "Security"
   },
   {
@@ -96,7 +96,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068781",
     "severity": "Security"
   },
   {
@@ -106,7 +106,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068787",
     "severity": "Security"
   },
   {
@@ -116,7 +116,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068791",
     "severity": "Security"
   },
   {
@@ -126,7 +126,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068840",
     "severity": "Security"
   },
   {
@@ -136,7 +136,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068861",
     "severity": "Security"
   },
   {
@@ -146,7 +146,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068864",
     "severity": "Security"
   },
   {
@@ -156,7 +156,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068865",
     "severity": "Security"
   },
   {
@@ -166,7 +166,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068904",
     "severity": "Security"
   },
   {
@@ -176,7 +176,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068905",
     "severity": "Security"
   },
   {
@@ -186,7 +186,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068906",
     "severity": "Security"
   },
   {
@@ -196,7 +196,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068907",
     "severity": "Security"
   },
   {
@@ -206,7 +206,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068908",
     "severity": "Security"
   },
   {
@@ -216,7 +216,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068909",
     "severity": "Security"
   },
   {
@@ -226,7 +226,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068966",
     "severity": "Security"
   },
   {
@@ -236,7 +236,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071413",
     "severity": "Security"
   },
   {
@@ -246,7 +246,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071417",
     "severity": "Security"
   },
   {
@@ -256,7 +256,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071501",
     "severity": "Security"
   },
   {
@@ -266,7 +266,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071503",
     "severity": "Security"
   },
   {
@@ -276,7 +276,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071504",
     "severity": "Security"
   },
   {
@@ -286,7 +286,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071505",
     "severity": "Security"
   },
   {
@@ -296,7 +296,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071506",
     "severity": "Security"
   },
   {
@@ -306,7 +306,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071507",
     "severity": "Security"
   },
   {
@@ -316,7 +316,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071542",
     "severity": "Security"
   },
   {
@@ -326,7 +326,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071543",
     "severity": "Security"
   },
   {
@@ -336,7 +336,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071544",
     "severity": "Security"
   },
   {
@@ -346,7 +346,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071546",
     "severity": "Security"
   },
   {
@@ -356,7 +356,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5071547",
     "severity": "Security"
   },
   {
@@ -366,7 +366,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5072014",
     "severity": "Security"
   },
   {
@@ -376,7 +376,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5072033",
     "severity": "Security"
   },
   {
@@ -386,7 +386,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5074204",
     "severity": "Security"
   },
   {
@@ -396,7 +396,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5074353",
     "severity": "Security"
   },
   {
@@ -406,7 +406,87 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "December 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5074596",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065221",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065221",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065222",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065222",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065223",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065223",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065224",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065224",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065225",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065225",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065226",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065226",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065227",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065227",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5065865",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065865",
     "severity": "Security"
   },
   {
@@ -416,7 +496,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066586",
     "severity": "Security"
   },
   {
@@ -426,7 +506,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066780",
     "severity": "Security"
   },
   {
@@ -436,7 +516,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066782",
     "severity": "Security"
   },
   {
@@ -446,7 +526,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066791",
     "severity": "Security"
   },
   {
@@ -456,7 +536,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066793",
     "severity": "Security"
   },
   {
@@ -466,7 +546,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066835",
     "severity": "Security"
   },
   {
@@ -476,7 +556,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066836",
     "severity": "Security"
   },
   {
@@ -486,7 +566,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066837",
     "severity": "Security"
   },
   {
@@ -496,7 +576,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068779",
     "severity": "Security"
   },
   {
@@ -506,7 +586,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068781",
     "severity": "Security"
   },
   {
@@ -516,7 +596,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068787",
     "severity": "Security"
   },
   {
@@ -526,7 +606,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068791",
     "severity": "Security"
   },
   {
@@ -536,7 +616,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068840",
     "severity": "Security"
   },
   {
@@ -546,7 +626,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068861",
     "severity": "Security"
   },
   {
@@ -556,7 +636,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068864",
     "severity": "Security"
   },
   {
@@ -566,7 +646,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068865",
     "severity": "Security"
   },
   {
@@ -576,7 +656,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068904",
     "severity": "Security"
   },
   {
@@ -586,7 +666,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068905",
     "severity": "Security"
   },
   {
@@ -596,7 +676,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068906",
     "severity": "Security"
   },
   {
@@ -606,7 +686,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068907",
     "severity": "Security"
   },
   {
@@ -616,7 +696,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068908",
     "severity": "Security"
   },
   {
@@ -626,7 +706,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068909",
     "severity": "Security"
   },
   {
@@ -636,7 +716,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "November 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068966",
     "severity": "Security"
   },
   {
@@ -646,7 +726,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5040673",
     "severity": "Security"
   },
   {
@@ -656,7 +736,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065306",
     "severity": "Security"
   },
   {
@@ -666,7 +746,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065425",
     "severity": "Security"
   },
   {
@@ -676,7 +756,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065426",
     "severity": "Security"
   },
   {
@@ -686,7 +766,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065428",
     "severity": "Security"
   },
   {
@@ -696,7 +776,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065429",
     "severity": "Security"
   },
   {
@@ -706,7 +786,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065431",
     "severity": "Security"
   },
   {
@@ -716,7 +796,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065432",
     "severity": "Security"
   },
   {
@@ -726,7 +806,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065474",
     "severity": "Security"
   },
   {
@@ -736,7 +816,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066128",
     "severity": "Security"
   },
   {
@@ -746,7 +826,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066129",
     "severity": "Security"
   },
   {
@@ -756,7 +836,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066130",
     "severity": "Security"
   },
   {
@@ -766,7 +846,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066131",
     "severity": "Security"
   },
   {
@@ -776,7 +856,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066133",
     "severity": "Security"
   },
   {
@@ -786,7 +866,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066134",
     "severity": "Security"
   },
   {
@@ -796,7 +876,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066135",
     "severity": "Security"
   },
   {
@@ -806,7 +886,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066136",
     "severity": "Security"
   },
   {
@@ -816,7 +896,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066137",
     "severity": "Security"
   },
   {
@@ -826,7 +906,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066138",
     "severity": "Security"
   },
   {
@@ -836,7 +916,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066139",
     "severity": "Security"
   },
   {
@@ -846,7 +926,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066140",
     "severity": "Security"
   },
   {
@@ -856,7 +936,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066141",
     "severity": "Security"
   },
   {
@@ -866,7 +946,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066143",
     "severity": "Security"
   },
   {
@@ -876,7 +956,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066144",
     "severity": "Security"
   },
   {
@@ -886,7 +966,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066145",
     "severity": "Security"
   },
   {
@@ -896,7 +976,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066146",
     "severity": "Security"
   },
   {
@@ -906,7 +986,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066148",
     "severity": "Security"
   },
   {
@@ -916,7 +996,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066149",
     "severity": "Security"
   },
   {
@@ -926,7 +1006,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066150",
     "severity": "Security"
   },
   {
@@ -936,7 +1016,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066151",
     "severity": "Security"
   },
   {
@@ -946,7 +1026,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066586",
     "severity": "Security"
   },
   {
@@ -956,7 +1036,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066780",
     "severity": "Security"
   },
   {
@@ -966,7 +1046,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066782",
     "severity": "Security"
   },
   {
@@ -976,7 +1056,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066791",
     "severity": "Security"
   },
   {
@@ -986,7 +1066,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066793",
     "severity": "Security"
   },
   {
@@ -996,7 +1076,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066835",
     "severity": "Security"
   },
   {
@@ -1006,7 +1086,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066836",
     "severity": "Security"
   },
   {
@@ -1016,7 +1096,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066837",
     "severity": "Security"
   },
   {
@@ -1026,7 +1106,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066840",
     "severity": "Security"
   },
   {
@@ -1036,7 +1116,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066872",
     "severity": "Security"
   },
   {
@@ -1046,7 +1126,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066873",
     "severity": "Security"
   },
   {
@@ -1056,7 +1136,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066874",
     "severity": "Security"
   },
   {
@@ -1066,7 +1146,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066875",
     "severity": "Security"
   },
   {
@@ -1076,7 +1156,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066876",
     "severity": "Security"
   },
   {
@@ -1086,7 +1166,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066877",
     "severity": "Security"
   },
   {
@@ -1096,7 +1176,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070879",
     "severity": "Security"
   },
   {
@@ -1106,7 +1186,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070881",
     "severity": "Security"
   },
   {
@@ -1116,7 +1196,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070882",
     "severity": "Security"
   },
   {
@@ -1126,7 +1206,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070883",
     "severity": "Security"
   },
   {
@@ -1136,7 +1216,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070884",
     "severity": "Security"
   },
   {
@@ -1146,7 +1226,7 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070886",
     "severity": "Security"
   },
   {
@@ -1156,7 +1236,267 @@
     "classification": "Security Update (Patch Tuesday)",
     "details": "October 2025 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5070887",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063756",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063756",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063757",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063757",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063758",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063758",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063759",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063759",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063760",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063760",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063761",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063761",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063762",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063762",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5063814",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5063814",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065306",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065306",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065425",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065425",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065426",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065426",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065427",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065427",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065428",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065428",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065429",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065429",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065430",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065430",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065431",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065431",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065432",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065432",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065435",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065435",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065468",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065468",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065474",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065474",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065507",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065507",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065508",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065508",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065509",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065509",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065510",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065510",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065511",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065511",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-09-09",
+    "kb": "KB5065994",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5065994",
     "severity": "Security"
   }
 ]
