@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2025-12-04",
+    "kb": "2025-Dec",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "Security update",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Dec",
+    "severity": "Update"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "2025-Nov",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "Security update",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Nov",
+    "severity": "Update"
+  },
+  {
+    "date": "2025-10-14",
+    "kb": "2025-Oct",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "Security update",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2025-Oct",
+    "severity": "Update"
+  }
+]
