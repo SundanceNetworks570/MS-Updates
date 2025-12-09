@@ -9,6 +9,30 @@ CVRF_URL = f"{API_BASE}/cvrf"
 
 KB_RE = re.compile(r"\bKB\d{6,8}\b", re.IGNORECASE)
 
+def to_text(x) -> str:
+    """
+    Safely coerce MSRC fields into text.
+    Handles strings, dicts like {"Value": "..."} or {"Text": "..."},
+    lists, None, etc.
+    """
+    if x is None:
+        return ""
+    if isinstance(x, str):
+        return x
+    if isinstance(x, (int, float, bool)):
+        return str(x)
+    if isinstance(x, dict):
+        # common MSRC patterns
+        for k in ("Value", "Text", "Title", "Description", "Name"):
+            v = x.get(k)
+            if isinstance(v, str) and v.strip():
+                return v
+        # fallback: stringify dict
+        return json.dumps(x, ensure_ascii=False)
+    if isinstance(x, list):
+        return " ".join(to_text(i) for i in x if to_text(i))
+    return str(x)
+
 def fetch_text(url: str) -> str:
     req = Request(
         url,
@@ -22,17 +46,14 @@ def fetch_text(url: str) -> str:
 
 def fetch_json_or_xml(url: str):
     """
-    Try to parse JSON. If that fails and it looks like XML, return a dict
-    carrying the raw XML for fallback extraction.
+    Try JSON first. If it fails and looks like XML, return raw XML.
     """
     raw = fetch_text(url)
     try:
         return json.loads(raw)
     except Exception as e:
-        # If it's XML, keep raw for regex KB extraction
         if raw.lstrip().startswith("<"):
             return {"__raw_xml": raw, "__json_error": str(e)}
-        # Otherwise raise a helpful error
         snippet = raw[:250].replace("\n", " ")
         raise RuntimeError(f"Non-JSON response and not XML. First 250 chars: {snippet}") from e
 
@@ -77,7 +98,7 @@ def flatten_product_tree(product_tree: dict) -> dict:
         full_names = product_tree.get("FullProductName", []) or []
         for p in full_names:
             pid = p.get("ProductID")
-            val = p.get("Value")
+            val = to_text(p.get("Value"))
             if pid and val:
                 id_to_name[pid] = val
     except Exception:
@@ -86,13 +107,14 @@ def flatten_product_tree(product_tree: dict) -> dict:
 
 def extract_remediation_rows(remediations, id_to_name, doc_date):
     rows = []
+
     if isinstance(remediations, dict):
         remediations = [remediations]
     if not isinstance(remediations, list):
         return rows
 
     for r in remediations:
-        desc = (r.get("Description") or "").strip()
+        desc = to_text(r.get("Description")).strip()
         if not desc:
             continue
 
@@ -113,7 +135,7 @@ def extract_remediation_rows(remediations, id_to_name, doc_date):
         if not pids:
             pids = [None]
 
-        r_url = r.get("URL") or r.get("Url") or r.get("Link") or ""
+        r_url = to_text(r.get("URL") or r.get("Url") or r.get("Link"))
 
         for pid in pids:
             pname_raw = id_to_name.get(pid, "Microsoft Products")
@@ -152,7 +174,6 @@ def extract_rows_from_cvrf(doc_id: str, doc_title: str, doc_date: datetime) -> l
                 "link": url,
                 "severity": "Security"
             })
-        # If no KBs found even in XML, return doc-level row
         if not rows:
             rows.append({
                 "date": doc_date.date().isoformat(),
@@ -227,11 +248,10 @@ def main():
         if dt < start or dt > end:
             continue
 
-        recent_docs.append((
-            d.get("ID"),
-            d.get("DocumentTitle") or d.get("Title") or "",
-            dt
-        ))
+        title_raw = d.get("DocumentTitle") or d.get("Title") or ""
+        title = to_text(title_raw).strip()
+
+        recent_docs.append((d.get("ID"), title, dt))
 
     out = []
 
@@ -241,9 +261,7 @@ def main():
         try:
             out.extend(extract_rows_from_cvrf(doc_id, title, dt))
         except Exception as e:
-            # IMPORTANT: log the real error so you can see it in Actions
             print(f"[ERROR] Failed parsing CVRF {doc_id}: {e}")
-
             out.append({
                 "date": dt.date().isoformat(),
                 "kb": doc_id,
