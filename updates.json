@@ -720,6 +720,26 @@
     "severity": "Security"
   },
   {
+    "date": "2025-11-11",
+    "kb": "KB5072014",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5072014",
+    "severity": "Security"
+  },
+  {
+    "date": "2025-11-11",
+    "kb": "KB5072033",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "November 2025 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5072033",
+    "severity": "Security"
+  },
+  {
     "date": "2025-10-14",
     "kb": "KB5040673",
     "product": "Microsoft Products",
