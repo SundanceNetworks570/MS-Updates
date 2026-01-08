@@ -4,8 +4,8 @@
     "kb": "2026-Jan",
     "product": "Microsoft Products",
     "classification": "Update",
-    "details": "2026-Jan Security Updates (CVRF fetch failed)",
-    "known_issues": "CVRF fetch error.",
+    "details": "2026-Jan Security Updates (JSON parsed, but no KBs found)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Jan",
     "severity": "Update"
   },
