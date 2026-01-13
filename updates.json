@@ -1,13 +1,163 @@
 [
   {
-    "date": "2026-01-01",
-    "kb": "2026-Jan",
+    "date": "2026-01-13",
+    "kb": "KB5068407",
     "product": "Microsoft Products",
-    "classification": "Update",
-    "details": "2026-Jan Security Updates (JSON parsed, but no KBs found)",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Jan",
-    "severity": "Update"
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068407",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5068450",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5068450",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073379",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073379",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073450",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073450",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073455",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073455",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073457",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073457",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073695",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073695",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073696",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073696",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073697",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073697",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073698",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073698",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073699",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073699",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073700",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073700",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073722",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073722",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073723",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073723",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5073724",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5073724",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-01-13",
+    "kb": "KB5074109",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "January 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5074109",
+    "severity": "Security"
   },
   {
     "date": "2025-12-09",
