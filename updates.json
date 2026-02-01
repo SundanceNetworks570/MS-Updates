@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-02-01",
+    "kb": "2026-Feb",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "2026-Feb Security Updates (CVRF fetch failed)",
+    "known_issues": "CVRF fetch error.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Feb",
+    "severity": "Update"
+  },
+  {
     "date": "2026-01-13",
     "kb": "KB5068407",
     "product": "Microsoft Products",
