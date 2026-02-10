@@ -1,13 +1,153 @@
 [
   {
-    "date": "2026-02-01",
-    "kb": "2026-Feb",
+    "date": "2026-02-10",
+    "kb": "KB5075897",
     "product": "Microsoft Products",
-    "classification": "Update",
-    "details": "2026-Feb Security Updates (CVRF fetch failed)",
-    "known_issues": "CVRF fetch error.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Feb",
-    "severity": "Update"
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075897",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075899",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075899",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075904",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075904",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075906",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075906",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075912",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075912",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075941",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075941",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075942",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075942",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075943",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075943",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075970",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075970",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075971",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075971",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5075999",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5075999",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5077179",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5077179",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5077181",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5077181",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB5077212",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5077212",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-02-10",
+    "kb": "KB868963",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "February 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB868963",
+    "severity": "Security"
   },
   {
     "date": "2026-01-01",
