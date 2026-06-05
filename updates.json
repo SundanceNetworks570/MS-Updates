@@ -420,6 +420,26 @@
     "severity": "Security"
   },
   {
+    "date": "2026-05-12",
+    "kb": "KB5093998",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "May 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5093998",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-05-12",
+    "kb": "KB5094127",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "May 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5094127",
+    "severity": "Security"
+  },
+  {
     "date": "2026-04-14",
     "kb": "KB5077465",
     "product": "Microsoft Products",
