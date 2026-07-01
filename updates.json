@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-07-01",
+    "kb": "2026-Jul",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "2026-Jul Security Updates (CVRF fetch failed)",
+    "known_issues": "CVRF fetch error.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Jul",
+    "severity": "Update"
+  },
+  {
     "date": "2026-06-09",
     "kb": "KB5087423",
     "product": "Microsoft Products",
