@@ -1488,5 +1488,105 @@
     "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5083769",
     "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099414",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099414",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099444",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099444",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099445",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099445",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099535",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099535",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099536",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099536",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099538",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099538",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099539",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099539",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5099540",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099540",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5101649",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101649",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-04-14",
+    "kb": "KB5101650",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "April 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101650",
+    "severity": "Security"
   }
 ]
