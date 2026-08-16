@@ -350,6 +350,16 @@
     "severity": "Security"
   },
   {
+    "date": "2026-08-11",
+    "kb": "KB5124659",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5124659",
+    "severity": "Security"
+  },
+  {
     "date": "2026-07-14",
     "kb": "KB37864969",
     "product": "Microsoft Products",
