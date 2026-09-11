@@ -111,16 +111,6 @@
   },
   {
     "date": "2026-09-08",
-    "kb": "KB5126042",
-    "product": "Microsoft Products",
-    "classification": "Security Update (Patch Tuesday)",
-    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
-    "known_issues": "See Microsoft release notes / CVRF for details.",
-    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126042",
-    "severity": "Security"
-  },
-  {
-    "date": "2026-09-08",
     "kb": "KB5126043",
     "product": "Microsoft Products",
     "classification": "Security Update (Patch Tuesday)",
