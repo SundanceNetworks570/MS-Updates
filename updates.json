@@ -571,6 +571,16 @@
   },
   {
     "date": "2026-08-11",
+    "kb": "KB5123099",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5123099",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
     "kb": "KB5123273",
     "product": "Microsoft Products",
     "classification": "Security Update (Patch Tuesday)",
@@ -607,6 +617,146 @@
     "details": "August 2026 Security Updates (KB extracted from JSON scan)",
     "known_issues": "See Microsoft release notes / CVRF for details.",
     "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5124659",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126043",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126043",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126044",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126044",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126045",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126045",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126046",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126046",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126047",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126047",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126048",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126048",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126049",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126049",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126050",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126050",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126051",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126051",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126052",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126052",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126053",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126053",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126421",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126421",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126422",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126422",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-08-11",
+    "kb": "KB5126424",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "August 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5126424",
     "severity": "Security"
   },
   {
