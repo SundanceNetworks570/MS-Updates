@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-01",
+    "kb": "2026-Oct",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "2026-Oct Security Updates (CVRF fetch failed)",
+    "known_issues": "CVRF fetch error.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Oct",
+    "severity": "Update"
+  },
+  {
     "date": "2026-09-08",
     "kb": "KB5122871",
     "product": "Microsoft Products",
