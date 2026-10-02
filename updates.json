@@ -1,13 +1,13 @@
 [
   {
-    "date": "2026-10-01",
-    "kb": "2026-Oct",
+    "date": "2026-10-13",
+    "kb": "KB5129955",
     "product": "Microsoft Products",
-    "classification": "Update",
-    "details": "2026-Oct Security Updates (CVRF fetch failed)",
-    "known_issues": "CVRF fetch error.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Oct",
-    "severity": "Update"
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5129955",
+    "severity": "Security"
   },
   {
     "date": "2026-09-08",
