@@ -810,13 +810,463 @@
     "severity": "Security"
   },
   {
-    "date": "2026-07-01",
-    "kb": "2026-Jul",
+    "date": "2026-07-14",
+    "kb": "KB37864969",
     "product": "Microsoft Products",
-    "classification": "Update",
-    "details": "2026-Jul Security Updates (CVRF fetch failed)",
-    "known_issues": "CVRF fetch error.",
-    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Jul",
-    "severity": "Update"
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB37864969",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB38232642",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB38232642",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5081477",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5081477",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5089270",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5089270",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5089271",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5089271",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5089548",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5089548",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5090347",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5090347",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5090354",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5090354",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5090407",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5090407",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5090408",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5090408",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5091158",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5091158",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5091223",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5091223",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5093421",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5093421",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5094041",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5094041",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5094042",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5094042",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5095051",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5095051",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099414",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099414",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099415",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099415",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099444",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099444",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099445",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099445",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099535",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099535",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099536",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099536",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099538",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099538",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099539",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099539",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5099540",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5099540",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100984",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100984",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100985",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100985",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100989",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100989",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100990",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100990",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100991",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100991",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5100998",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5100998",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101000",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101000",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101001",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101001",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101002",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101002",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101003",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101003",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101004",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101004",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101005",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101005",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101006",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101006",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101007",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101007",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101008",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101008",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101009",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101009",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101010",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101010",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101011",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101011",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101014",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101014",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101649",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101649",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-07-14",
+    "kb": "KB5101650",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "July 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5101650",
+    "severity": "Security"
   }
 ]
