@@ -601,6 +601,86 @@
   },
   {
     "date": "2026-09-08",
+    "kb": "KB5104824",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5104824",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122048",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122048",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122770",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122770",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122771",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122771",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122772",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122772",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122773",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122773",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122774",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122774",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
+    "kb": "KB5122775",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "September 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5122775",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-09-08",
     "kb": "KB5122871",
     "product": "Microsoft Products",
     "classification": "Security Update (Patch Tuesday)",
