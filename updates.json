@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-01",
+    "kb": "2026-Nov",
+    "product": "Microsoft Products",
+    "classification": "Update",
+    "details": "2026-Nov Security Updates (CVRF fetch failed)",
+    "known_issues": "CVRF fetch error.",
+    "link": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Nov",
+    "severity": "Update"
+  },
+  {
     "date": "2026-10-13",
     "kb": "KB5099414",
     "product": "Microsoft Products",
