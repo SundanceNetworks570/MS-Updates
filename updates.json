@@ -1020,6 +1020,76 @@
     "severity": "Security"
   },
   {
+    "date": "2026-10-13",
+    "kb": "KB5131080",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131080",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5131085",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131085",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5131087",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131087",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5131090",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131090",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5131096",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5131096",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5132059",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5132059",
+    "severity": "Security"
+  },
+  {
+    "date": "2026-10-13",
+    "kb": "KB5132061",
+    "product": "Microsoft Products",
+    "classification": "Security Update (Patch Tuesday)",
+    "details": "October 2026 Security Updates (KB extracted from JSON scan)",
+    "known_issues": "See Microsoft release notes / CVRF for details.",
+    "link": "https://www.catalog.update.microsoft.com/Search.aspx?q=KB5132061",
+    "severity": "Security"
+  },
+  {
     "date": "2026-09-08",
     "kb": "KB5104824",
     "product": "Microsoft Products",
